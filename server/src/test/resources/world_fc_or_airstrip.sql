@@ -1,0 +1,70 @@
+-- MySQL dump 10.16  Distrib 10.1.37-MariaDB, for debian-linux-gnu (x86_64)
+--
+-- Host: 127.0.0.1    Database: cs314
+-- ------------------------------------------------------
+-- Server version	10.2.21-MariaDB
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `world`
+--
+
+DROP TABLE IF EXISTS `world`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `world` (
+  `index` int(11) NOT NULL,
+  `id` varchar(30) NOT NULL,
+  `type` varchar(100) DEFAULT NULL,
+  `name` varchar(1000) DEFAULT NULL,
+  `latitude` varchar(1000) DEFAULT NULL,
+  `longitude` varchar(1000) DEFAULT NULL,
+  `altitude` varchar(1000) DEFAULT NULL,
+  `continent` varchar(1000) DEFAULT NULL,
+  `iso_country` varchar(1000) DEFAULT NULL,
+  `iso_region` varchar(1000) DEFAULT NULL,
+  `municipality` varchar(1000) DEFAULT NULL,
+  `scheduled_service` varchar(1000) DEFAULT NULL,
+  `gps_code` varchar(1000) DEFAULT NULL,
+  `iata_code` varchar(1000) DEFAULT NULL,
+  `local_code` varchar(1000) DEFAULT NULL,
+  `home_link` varchar(1000) DEFAULT NULL,
+  `wikipedia_link` varchar(1000) DEFAULT NULL,
+  `keywords` varchar(1000) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  FULLTEXT KEY `airports_name_idx` (`name`),
+  FULLTEXT KEY `airpots_municipality_idx` (`municipality`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `world`
+--
+-- WHERE:  (id LIKE "%collins%") OR (name LIKE "%collins%") OR (municipality LIKE "%collins%") OR (id LIKE "%ch airstrip%") OR (name LIKE "%ch airstrip%") OR (municipality LIKE "%ch airstrip%")
+
+LOCK TABLES `world` WRITE;
+/*!40000 ALTER TABLE `world` DISABLE KEYS */;
+INSERT INTO `world` VALUES (6788,'04OR','small_airport','Collins Landing Strip','44.7499008179','-120.200996399','1500','NA','US','US-OR','Mitchell','no','04OR',NULL,'04OR',NULL,NULL,NULL),(7047,'09OK','small_airport','Ragtime Aerodrome','36.35449981689453','-95.86389923095703','700','NA','US','US-OK','Collinsville','no','09OK',NULL,'09OK',NULL,NULL,NULL),(7141,'0CO4','heliport','Geo-Seis Helicopters Heliport','40.5899009705','-105.04599762','4935','NA','US','US-CO','Fort Collins','no','0CO4',NULL,'0CO4',NULL,NULL,NULL),(7144,'0CO7','heliport','Century Helicopters Heliport','40.5854988098','-105.040000916','4935','NA','US','US-CO','Fort Collins','no','0CO7',NULL,'0CO7',NULL,NULL,NULL),(7195,'0GE4','small_airport','Pecan Patch Airstrip','33.33140182495117','-84.2667007446289','860','NA','US','US-GA','Sunnyside','no','0GE4',NULL,'0GE4',NULL,NULL,NULL),(9355,'2CO0','heliport','Heli-Support Ii Heliport','40.58359909057617','-106.98500061035156','4935','NA','US','US-CO','Fort Collins','no','2CO0',NULL,'2CO0',NULL,NULL,NULL),(9884,'2XA4','small_airport','Flying S Ranch Airport','33.5807991027832','-96.80030059814453','730','NA','US','US-TX','Collinsville','no','2XA4',NULL,'2XA4',NULL,NULL,NULL),(10040,'33CO','small_airport','Melby Ranch Airstrip','37.064998626708984','-105.46399688720703','8820','NA','US','US-CO','San Luis','no','33CO',NULL,'33CO',NULL,NULL,NULL),(10130,'35CN','small_airport','Farnsworth Ranch Airstrip','39.09989929199219','-121.93399810791016','50','NA','US','US-CA','Grimes','no','35CN',NULL,'35CN',NULL,NULL,NULL),(10167,'35TX','small_airport','Flying B Ranch Airstrip','32.48400115966797','-99.82559967041016','1750','NA','US','US-TX','Abilene','no','35TX',NULL,'35TX',NULL,NULL,NULL),(10427,'3CO4','small_airport','Tercio Ranch Airstrip','37.070899963378906','-105.01899719238281','7957','NA','US','US-CO','Stonewall','no','3CO4',NULL,'3CO4',NULL,NULL,NULL),(10950,'41CO','small_airport','Flying Dog Ranch Airstrip','39.971111','-107.611111','7020','NA','US','US-CO','Meeker','no','41CO',NULL,'41CO',NULL,NULL,NULL),(11013,'42OR','small_airport','Shotgun Ranch Airstrip','44.13420104980469','-120.322998046875','3430','NA','US','US-OR','Post','no','42OR',NULL,'42OR',NULL,NULL,NULL),(11826,'50CO','heliport','William T Browder Heliport','40.65829849243164','-104.95099639892578','5200','NA','US','US-CO','Fort Collins','no','50CO',NULL,'50CO',NULL,NULL,NULL),(45298,'58AZ','small_airport','Chapman Ranch Airstrip','34.093611','-110.932778','5115','NA','US','US-AZ','Young','no','58AZ',NULL,'58AZ',NULL,NULL,NULL),(12985,'65CO','small_airport','Wkr Airport','40.52080154418945','-104.96700286865234','4840','NA','US','US-CO','Fort Collins','no','65CO',NULL,'65CO',NULL,NULL,NULL),(13123,'68OR','closed','Lyda Ranch Airstrip','45.3911','-121.276001','2450','NA','US','US-OR','Dufur','no',NULL,NULL,NULL,NULL,NULL,'68OR'),(13228,'6CO4','small_airport','Hat-Field STOLport','40.51029968261719','-105.0009994506836','4885','NA','US','US-CO','Fort Collins','no','6CO4',NULL,'6CO4',NULL,NULL,NULL),(13448,'6NK4','small_airport','Ttt Air Airport','42.597801208496094','-78.96890258789062','891','NA','US','US-NY','North Collins','no','6NK4',NULL,'6NK4',NULL,NULL,NULL),(13752,'72WI','small_airport','Windhaven Airport','44.04610061645508','-87.9928970336914','910','NA','US','US-WI','Collins','no','72WI',NULL,'72WI',NULL,NULL,NULL),(13944,'77OH','small_airport','Collins-Flege Airpark','39.36280059814453','-84.34130096435547','860','NA','US','US-OH','Mason','no','77OH',NULL,'77OH',NULL,NULL,NULL),(13990,'78OR','small_airport','Crowley Ranch Airstrip','43.307899475097656','-117.89399719238281','4128','NA','US','US-OR','Crowley','no','78OR',NULL,'78OR',NULL,NULL,NULL),(14701,'85TA','small_airport','J-Bar Ranch Airport','33.579898834228516','-96.8124008178711','718','NA','US','US-TX','Collinsville','no','85TA',NULL,'85TA',NULL,NULL,NULL),(14845,'89TX','small_airport','Aero-Bee Ranch Airstrip','30.87929916381836','-98.41699981689453','1242','NA','US','US-TX','Burnet','no','89TX',NULL,'89TX',NULL,NULL,NULL),(16389,'AZ01','small_airport','Outback Ranch Airstrip','33.8477783203','-113.570274353','1980','NA','US','US-AZ','Wenden','no','AZ01',NULL,'AZ01',NULL,NULL,NULL),(16433,'AZ46','small_airport','H&H Ranch Airstrip','34.76639938354492','-112.54900360107422','5025','NA','US','US-AZ','Chino Valley','no','AZ46',NULL,'AZ46',NULL,NULL,NULL),(309572,'BZ-0001','small_airport','Chan Chich Airstrip','17.5664','-89.0468','404','NA','BZ','BZ-OW','Gallon Jug','no',NULL,NULL,NULL,NULL,'http://en.wikipedia.org/wiki/Chan_Chich_Airstrip',NULL),(16638,'CD07','heliport','Poudre Valley Hospital Heliport','40.57160186767578','-105.05599975585938','4960','NA','US','US-CO','Fort Collins','no','CD07',NULL,'CD07',NULL,NULL,NULL),(16677,'CD46','heliport','North Arrow Heliport','40.59109878540039','-105.0479965209961','4935','NA','US','US-CO','Fort Collins','no','CD46',NULL,'CD46',NULL,NULL,NULL),(320348,'CMW4','small_airport','Collins Field','45.507401','-77.9906','1048','NA','CA','CA-ON','Madawaska','no','CMW4',NULL,'CMW4',NULL,'https://en.wikipedia.org/wiki/Madawaska_Collins_Field_Aerodrome',NULL),(16907,'CO53','small_airport','Yankee Field','40.634700775146484','-104.99099731445312','5050','NA','US','US-CO','Fort Collins','no','CO53',NULL,'CO53',NULL,NULL,NULL),(16909,'CO55','small_airport','Christman Field','40.597198486328125','-105.14399719238281','5160','NA','US','US-CO','Fort Collins','no','CO55',NULL,'CO55',NULL,NULL,NULL),(16944,'CO91','heliport','Heli-Support Heliport','40.583900451660156','-105.03500366210938','4935','NA','US','US-CO','Fort Collins','no','CO91',NULL,'CO91',NULL,NULL,NULL),(301231,'CTY4','small_airport','Olds / North 40 Ranch Airstrip','51.9001705129','-114.147820473','3410','NA','CA','CA-AB',NULL,'no','CTY4',NULL,NULL,NULL,NULL,NULL),(1785,'CYKC','small_airport','Collins Bay Airport','58.236099243199995','-103.678001404','1341','NA','CA','CA-SK','Collins Bay','no','CYKC','YKC',NULL,NULL,'http://en.wikipedia.org/wiki/Collins_Bay_Airport','YKC'),(316013,'GB-0194','small_airport','East Winch Airstrip','52.7237397','0.524189',NULL,'EU','GB','GB-ENG',NULL,'no',NULL,NULL,NULL,NULL,NULL,NULL),(318143,'GB-0304','small_airport','Craysmarch Airstrip','51.3636492','-2.090858',NULL,'EU','GB','GB-ENG','Melksham','no',NULL,NULL,NULL,NULL,NULL,NULL),(46451,'JM-0003','small_airport','Tulloch Airstrip','18.104596899500002','-76.9878101349','300','NA','JM','JM-14','Bog Walk','no',NULL,NULL,NULL,NULL,NULL,NULL),(18748,'K3V5','closed','Fort Collins Downtown Airport','40.5882987976','-105.041999817','4939','NA','US','US-CO',NULL,'no','3V5',NULL,'3V5',NULL,'http://en.wikipedia.org/wiki/Fort_Collins_Downtown_Airport',NULL),(318719,'KE-0116','small_airport','Galana Ranch Airstrip','-3.062141','39.331661',NULL,'AF','KE','KE-200',NULL,'no',NULL,NULL,NULL,NULL,NULL,NULL),(318730,'KE-0127','small_airport','Kamogi Ranch Airstrip','0.601706','36.73699',NULL,'AF','KE','KE-700',NULL,'no',NULL,NULL,NULL,NULL,NULL,NULL),(318743,'KE-0140','small_airport','Kisima Ranch Airstrip','0.512642','36.694537',NULL,'AF','KE','KE-700',NULL,'no',NULL,NULL,NULL,NULL,NULL,NULL),(318773,'KE-0170','small_airport','Mukenye Ranch Airstrip','0.251711','36.805338',NULL,'AF','KE','KE-700',NULL,'no',NULL,NULL,NULL,NULL,NULL,NULL),(318813,'KE-0186','small_airport','Rukinga Ranch Airstrip','-3.575566','38.760165','1767','AF','KE','KE-700',NULL,'no',NULL,NULL,NULL,NULL,NULL,NULL),(318814,'KE-0187','small_airport','Saguta Naibor Ranch Airstrip','0.431231','36.729133','5600','AF','KE','KE-700',NULL,'no',NULL,NULL,NULL,NULL,NULL,NULL),(318824,'KE-0195','small_airport','Sosian Ranch Airstrip','0.418494','36.738667','5700','AF','KE','KE-700',NULL,'no',NULL,NULL,NULL,NULL,NULL,NULL),(19885,'KFNL','small_airport','Fort Collins Loveland Municipal Airport','40.4518013','-105.011001587','5016','NA','US','US-CO','Fort Collins/Loveland','no','KFNL','FNL','FNL','http://fortloveair.com','http://en.wikipedia.org/wiki/Fort_Collins-Loveland_Municipal_Airport',NULL),(21895,'MD50','small_airport','Chesapeake Ranch Airstrip','38.36119842529297','-76.40519714355469','116','NA','US','US-MD','Lusby','no','MD50',NULL,'MD50',NULL,NULL,NULL),(22561,'MU69','small_airport','Peterman Airport','37.86949920654297','-93.6259994506836','888','NA','US','US-MO','Collins','no','MU69',NULL,'MU69',NULL,NULL,NULL),(46095,'MX-0002','small_airport','Meling Ranch Airstrip','30.9753278217','-115.737876892',NULL,'NA','MX','MX-BCN',NULL,'no',NULL,NULL,'MSJG',NULL,NULL,NULL),(315810,'MX-0069','small_airport','Hernandez Ranch Airstrip','19.3293','-102.3274','7026','NA','MX','MX-MIC','Tancitaro','no',NULL,NULL,'HRH',NULL,NULL,NULL),(23334,'NV24','small_airport','Fort Ruby Ranch Airstrip','40.05799865722656','-115.50599670410156','6006','NA','US','US-NV','Ruby Valley','no','NV24',NULL,'NV24',NULL,NULL,NULL),(23341,'NV31','small_airport','Barker Creek Ranch Airstrip','38.80580139160156','-117.03099822998047','6620','NA','US','US-NV','Round Mountain','no','NV31',NULL,'NV31',NULL,NULL,NULL),(23786,'OK45','heliport','Collinsville Rural Fire District Heliport','36.35430145263672','-95.84030151367188','650','NA','US','US-OK','Collinsville','no','OK45',NULL,'OK45',NULL,NULL,NULL),(23795,'OK58','small_airport','Bluestem Airport','36.397300720214844','-95.90499877929688','660','NA','US','US-OK','Collinsville','no','OK58',NULL,'OK58',NULL,NULL,NULL),(23820,'OK93','small_airport','Airman Acres Airport','36.33340072631836','-95.88359832763672','695','NA','US','US-OK','Collinsville','no','OK93',NULL,'OK93',NULL,NULL,NULL),(23821,'OK94','small_airport','Sand Ridge Airpark Inc Airport','36.354801177978516','-95.80329895019531','675','NA','US','US-OK','Collinsville','no','OK94',NULL,'OK94',NULL,NULL,NULL),(24690,'T32','small_airport','Sudden Stop Airport','33.57149887084961','-96.9072036743164','720','NA','US','US-TX','Collinsville','no','T32',NULL,'T32',NULL,NULL,NULL),(25203,'TX89','small_airport','Ganze Ranch Airstrip','32.96979904174805','-96.62249755859375','500','NA','US','US-TX','Garland','no','TX89',NULL,'TX89',NULL,NULL,NULL),(34930,'US-0001','small_airport','Flying M Ranch Airstrip','38.60940170288086','-118.99600219726562',NULL,'NA','US','US-NV',NULL,'no',NULL,NULL,NULL,NULL,'http://en.wikipedia.org/wiki/Flying-M_Ranch',NULL),(45097,'US-0058','small_airport','Avery Ranch Airstrip','41.629413537699996','-122.411416769','2620','NA','US','US-CA',NULL,'no',NULL,NULL,NULL,NULL,NULL,NULL),(321937,'US-0369','closed','Panama City Beach Airstrip','30.201273','-85.817422','10','NA','US','US-FL','Panama City Beach','no',NULL,NULL,NULL,NULL,NULL,'FA07'),(25451,'VG16','small_airport','Collins Airport','36.625099182128906','-80.17060089111328','1100','NA','US','US-VA','Patrick Springs','no','VG16',NULL,'VG16',NULL,NULL,NULL),(25822,'WN27','small_airport','Redoft Airport','44.079200744628906','-87.97570037841797','815','NA','US','US-WI','Collins','no','WN27',NULL,'WN27',NULL,NULL,NULL),(27487,'YCSV','small_airport','Collinsville Airport','-20.59670066833496','147.86000061035156','180','OC','AU','AU-QLD',NULL,'no','YCSV','KCE',NULL,NULL,NULL,NULL),(309227,'YXCV','heliport','Collinsville Hospital Helipad','-20.546745','147.837734','706','OC','AU','AU-QLD','Collinsville','no','YXCV',NULL,'YXCV',NULL,NULL,NULL);
+/*!40000 ALTER TABLE `world` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2019-04-10 15:05:25
